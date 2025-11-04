@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@356&display=swap');
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+html {
+    font-size: 16px;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #2d2d2d);
+    color: white;
+    font-family: "Comfortaa", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ===== ТЕКСТ ===== */
+.comfortaa-text {
+    font-family: "Comfortaa";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fade-text {
+    color: white;
+    transition: color 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.fade-text:hover {
+    color: grey;
+}
+
+/* ===== ШАПКА И НАВИГАЦИЯ ===== */
+header {
+    background: linear-gradient(to right, black, rgb(17, 17, 17));
+    padding: 30px 0;
+    position: absolute;
+    width: 100%;
+    right: 0;
+}
+
+header nav {
+    float: right;
+    width: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    padding-right: 40%;
+}
+
+header nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li:not(:last-child) {
+    margin-right: 2vw;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: clamp(14px, 1.2vw, 18px);
+}
+
+/* Социальные иконки в шапке */
+.social {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    margin-left: 3vw;
+}
+
+.social li {
+    margin: 0;
+}
+
+.social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social i {
+    font-size: clamp(20px, 2vw, 24px);
+}
+
+/* ===== ГЛАВНЫЙ ЭКРАН (HERO) ===== */
+.hero-info {
+    width: 100%;
+    max-width: 500px;
+}
+
+.hero h1{
+    font-size: 40px;
+}
+
+.hero-info h1 {
+    font-size: clamp(48px, 8vw, 102px);
+    color: white;
+    font-family: "Comfortaa";
+    margin: 0 0 20px 0;
+}
+
+.intro {
+    font-size: clamp(18px, 2vw, 24px);
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.description {
+    font-size: clamp(14px, 1.5vw, 18px);
+    line-height: 1.6;
+    color: #b0b0b0;
+}
+
+/* Изображения в hero */
+.hero img {
+    border: 0px solid white;
+    border-radius: 15px;
+    transition: all 0.4s ease; 
+}
+
+.hero img:hover {
+    transform: scale(1.1);
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ===== СОЦИАЛЬНЫЕ КНОПКИ ===== */
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(15px, 2vw, 25px);
+    margin-top: clamp(30px, 5vw, 60px);
+    max-width: 500px;
+    width: 100%;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    padding: clamp(12px, 2vw, 15px) clamp(15px, 2vw, 20px);
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: "Comfortaa", sans-serif;
+}
+
+.social-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-item i {
+    margin-right: clamp(8px, 1vw, 12px);
+    font-size: clamp(1.2em, 2vw, 1.4em);
+    transition: transform 0.3s ease;
+}
+
+.social-item:hover i {
+    transform: scale(1.1);
+}
+
+.social-item span {
+    color: white;
+    font-size: clamp(14px, 1.5vw, 16px);
+}
+
+/* Цвета социальных кнопок */
+.vk-item i { color: #4C75A3; }
+.instagram-item i { color: #E4405F; }
+.telegram-item i { color: #0088cc; }
+.github-item i { color: #f0f6fc; }
+
+.vk-item:hover { border-color: #4C75A3; }
+.instagram-item:hover { border-color: #E4405F; }
+.telegram-item:hover { border-color: #0088cc; }
+.github-item:hover { border-color: #f0f6fc; }
+
+/* ===== СЕКЦИЯ ABOUT ===== */
+/* Общие стили для картинок в about */
+.about-img {
+    position: absolute;
+    border: 0px solid white;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.about-img:hover {
+    transform: scale(1.1);
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Конкретные позиции для картинок about */
+.img {
+    position: absolute;
+    right: 120px;
+    top: 400px;
+    width: 200px;
+    height: 300px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.img-second {
+    position: absolute;
+    right: 450px;
+    top: 400px;
+    width: 200px;
+    height: 300px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* ===== ФОРМА ОБРАТНОЙ СВЯЗИ ===== */
+.full-width-form-section {
+    width: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+    box-shadow: 
+        0 -8px 25px rgba(0, 0, 0, 0.3),
+        0 8px 25px rgba(0, 0, 0, 0.3);
+    padding: clamp(40px, 6vw, 80px) 0;
+    margin-top: clamp(30px, 5vw, 60px);
+}
+
+.form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(15px, 3vw, 20px);
+}
+
+.form-container h2 {
+    font-size: clamp(1.8em, 4vw, 2.5em);
+    margin-bottom: 10px;
+    color: white;
+    font-family: "Comfortaa";
+}
+
+.form-intro {
+    color: #b0b0b0;
+    margin-bottom: clamp(20px, 4vw, 40px);
+    font-size: clamp(14px, 1.5vw, 16px);
+    max-width: 600px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 2vw, 25px);
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-size: clamp(12px, 1.2vw, 14px);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: clamp(12px, 2vw, 15px) clamp(35px, 3vw, 45px) clamp(12px, 2vw, 15px) clamp(12px, 2vw, 15px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-family: "Comfortaa", sans-serif;
+    font-size: clamp(14px, 1.5vw, 16px);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0088cc;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 2px rgba(0, 136, 204, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: clamp(100px, 15vw, 120px);
+}
+
+.input-icon {
+    position: absolute;
+    right: clamp(12px, 2vw, 17px);
+    top: 64%;
+    transform: translateY(-50%);
+    color: #b0b0b0;
+    font-size: clamp(14px, 1.5vw, 16px);
+}
+
+.form-group textarea + .input-icon {
+    top: clamp(25px, 3vw, 30px);
+    transform: none;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: clamp(14px, 2vw, 16px) clamp(20px, 3vw, 30px);
+    background: linear-gradient(135deg, #0088cc, #006699);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: "Comfortaa", sans-serif;
+    font-size: clamp(14px, 1.5vw, 16px);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    width: clamp(180px, 25vw, 200px);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+    background: linear-gradient(135deg, #0099e6, #0077b3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Секция портфолио */
+.portfolio-section {
+    padding: 40px 0 80px;
+}
+
+.section-title {
+    font-size: clamp(32px, 4vw, 48px);
+    color: white;
+    text-align: center;
+    margin: 0 0 50px 0;
+    font-family: "Comfortaa";
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 136, 204, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-image {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-content {
+    padding: 25px;
+}
+
+.portfolio-content h3 {
+    color: white;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    font-family: "Comfortaa";
+}
+
+.portfolio-content p {
+    color: #e0e0e0;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    background: rgba(0, 136, 204, 0.15);
+    color: #0088cc;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 11px;
+    border: 1px solid rgba(0, 136, 204, 0.2);
+}
